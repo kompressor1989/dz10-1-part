@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <form name="test" method="post" action="input1.php">
+        <p><b>Время зарядки электромобиля:</b><br>
+            <input id="result" type="text" size="70" placeholder="Счас узнаем за сколько часов зарядиться электромобиль" readonly>
+        </p>
+        <p><b>У вас электромобиль:</b><br>
+            <input required type="radio" name="browser" onclick="carForm.electric = true">Да<br>
+           </p>
+        <p><b>Введите ёмкость батареи авто (кВт)</b><br>
+            <input required type="text" size="40" placeholder="80 Квт" oninput="carForm.powerElectric = +this.value;">
+        </p>
+        <p><b>Введите мощность электро автомобиля (кВт)</b><br>
+            <input required type="text" size="40" placeholder="15 кВт" oninput="carForm.powerNeed = +this.value;">
+        </p>
+        <p><b>Введите мощность стационарной зарядной станции электромобиля (Квт)</b><br>
+            <input type="text" size="40"  oninput="carForm.powerRecharge = +this.value;">
+        </p>
+        <br>
+        <p><b>Введите параметры электросети, если заряжаете вне стационарной зарядной станции:</b><br>
+        </p>
+        <br>
+        <p><b>Введите количество фаз электросети</b><br>
+            <input type="text" size="40" placeholder="1" oninput="carForm.networkPhase = +this.value;">
+        </p>
+        <p><b>Введите напряжение электросети (Вольт)</b><br>
+            <input type="text" size="40" placeholder="220 Вольт" oninput="carForm.networkVoltage = +this.value;">
+        </p>
+        <p><b>Введите силу тока электросети (Ампер)</b><br>
+            <input  type="text" size="40" placeholder="16 А" oninput="carForm.networkElectricity = +this.value;">
+        </p>
+        <br>
+        <p><br>
+            <input class="button" type="reset" value="Очистить">
+        </p>
+    </form>
+    <br>
+    <button class="button agree" type="submit" onclick="carForm.showElectrRecharge()">Расчет</button><br>
+    
+    <script src="/script.js"></script>
+
+</body>
+</html>
